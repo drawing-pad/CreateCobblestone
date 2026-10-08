@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 
 public class MechanicalGeneratorRenderer extends KineticBlockEntityRenderer<MechanicalGeneratorBlockEntity> {
@@ -20,6 +21,10 @@ public class MechanicalGeneratorRenderer extends KineticBlockEntityRenderer<Mech
     }
 
     @Override
+    protected BlockState getRenderedBlockState(MechanicalGeneratorBlockEntity be) {
+       return shaft(getRotationAxisOf(be));
+    }
+    
     protected void renderSafe(MechanicalGeneratorBlockEntity be, float partialTicks, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
         Block renderedBlock = be.type.getBlock();
 

@@ -22,7 +22,7 @@ public class MechanicalGeneratorRenderer extends KineticBlockEntityRenderer<Mech
 
     @Override
     protected BlockState getRenderedBlockState(MechanicalGeneratorBlockEntity be) {
-       return shaft(getRotationAxisOf(be));
+        return shaft(getRotationAxisOf(be));
     }
 
     @Override

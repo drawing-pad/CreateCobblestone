@@ -24,7 +24,8 @@ public class MechanicalGeneratorRenderer extends KineticBlockEntityRenderer<Mech
     protected BlockState getRenderedBlockState(MechanicalGeneratorBlockEntity be) {
        return shaft(getRotationAxisOf(be));
     }
-    
+
+    @Override
     protected void renderSafe(MechanicalGeneratorBlockEntity be, float partialTicks, PoseStack ms, MultiBufferSource buffer, int light, int overlay) {
         Block renderedBlock = be.type.getBlock();
 
